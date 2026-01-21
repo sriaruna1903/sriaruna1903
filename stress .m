@@ -1,0 +1,15 @@
+clc;clear;close all;
+d=4;
+A=pi*(d^2)/4;
+lo=20;
+disp=[0 0.2 0.5 1 1.5 2 2.5 3];
+force=[0 20 50 90 110 120 100 50];
+strain=disp/Lo;
+stress=force/A;
+E=polyfit(strain(1:3),stress(1:3),1);
+E_value=E(1);
+fprintf("Young's Modulus = %.2f MPa\n", Evalue);
+plot(strain,stress, '-o','LineWidth',1.5);
+xlabel("Strain");ylabel("Stress(MPa)");
+title("Stress-Strain Curve of Bone");
+grid on;
